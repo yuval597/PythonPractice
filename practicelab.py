@@ -41,3 +41,17 @@ if del_server.lower() == 'yes':
 print("The updated configuration is:")
 for server, ip in server_ips.items():
     print(f"{server} -> {ip}")
+
+new_server = input("Do you want to add a new server? (yes/no)\n")
+if new_server.lower() == 'yes':
+    new_server_name = input("Enter the new server name:\n")
+    new_server_ip = input(f"Enter the IP address for {new_server_name}:\n")
+    server_ips[new_server_name] = new_server_ip
+    print(f"{new_server_name} with IP {new_server_ip} has been added.")
+    print("The final configuration is:")
+    for server, ip in server_ips.items():
+        print(f"{server} -> {ip}")
+
+print(f"The final list of servers is: {list(server_ips.keys())}")
+
+print(f"The final list of IPs is: {list(server_ips.values())}")
